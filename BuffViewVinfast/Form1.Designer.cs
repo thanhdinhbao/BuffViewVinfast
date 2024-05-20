@@ -39,11 +39,13 @@ namespace BuffViewVinfast
             this.txtLink = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnStartView
             // 
-            this.btnStartView.Location = new System.Drawing.Point(115, 209);
+            this.btnStartView.Location = new System.Drawing.Point(101, 222);
             this.btnStartView.Name = "btnStartView";
             this.btnStartView.Size = new System.Drawing.Size(89, 51);
             this.btnStartView.TabIndex = 0;
@@ -53,14 +55,14 @@ namespace BuffViewVinfast
             // 
             // txtFilePath
             // 
-            this.txtFilePath.Location = new System.Drawing.Point(47, 83);
+            this.txtFilePath.Location = new System.Drawing.Point(48, 97);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.Size = new System.Drawing.Size(194, 20);
             this.txtFilePath.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(257, 82);
+            this.button1.Location = new System.Drawing.Point(251, 96);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(35, 23);
             this.button1.TabIndex = 2;
@@ -72,7 +74,7 @@ namespace BuffViewVinfast
             // 
             this.radView.AutoSize = true;
             this.radView.Checked = true;
-            this.radView.Location = new System.Drawing.Point(47, 164);
+            this.radView.Location = new System.Drawing.Point(48, 178);
             this.radView.Name = "radView";
             this.radView.Size = new System.Drawing.Size(48, 17);
             this.radView.TabIndex = 3;
@@ -83,7 +85,7 @@ namespace BuffViewVinfast
             // radShare
             // 
             this.radShare.AutoSize = true;
-            this.radShare.Location = new System.Drawing.Point(188, 164);
+            this.radShare.Location = new System.Drawing.Point(189, 178);
             this.radShare.Name = "radShare";
             this.radShare.Size = new System.Drawing.Size(53, 17);
             this.radShare.TabIndex = 4;
@@ -94,7 +96,7 @@ namespace BuffViewVinfast
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 28);
+            this.label1.Location = new System.Drawing.Point(32, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(230, 18);
             this.label1.TabIndex = 5;
@@ -110,7 +112,7 @@ namespace BuffViewVinfast
             // 
             // txtLink
             // 
-            this.txtLink.Location = new System.Drawing.Point(47, 123);
+            this.txtLink.Location = new System.Drawing.Point(48, 137);
             this.txtLink.Name = "txtLink";
             this.txtLink.Size = new System.Drawing.Size(194, 20);
             this.txtLink.TabIndex = 7;
@@ -118,7 +120,7 @@ namespace BuffViewVinfast
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 87);
+            this.label2.Location = new System.Drawing.Point(7, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 8;
@@ -127,17 +129,41 @@ namespace BuffViewVinfast
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 126);
+            this.label3.Location = new System.Drawing.Point(7, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Link:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Site:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Zefoy",
+            "Homedecoration"});
+            this.comboBox1.Location = new System.Drawing.Point(48, 65);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(194, 21);
+            this.comboBox1.TabIndex = 12;
+            this.comboBox1.Text = "Zefoy";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 291);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtLink);
@@ -169,6 +195,8 @@ namespace BuffViewVinfast
         private System.Windows.Forms.TextBox txtLink;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

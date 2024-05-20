@@ -22,7 +22,7 @@ namespace BuffViewVinfast
             Thread.Sleep(time * 1000);
         }
 
-        void CreateChrome(string url)
+        void RunZefoy(string url)
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArguments("--start-maximized");
@@ -73,8 +73,40 @@ namespace BuffViewVinfast
             var btnBuff = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(cfXpath)));
             btnBuff.Click();
             //Get time remain
-            Sleep(1);
+            //Sleep(1);
             //lblTimeRemain.Text = driver.FindElement(By.XPath("/html/body/div[10]/div/div/span")).Text;
+
+            Sleep(1);
+            driver.Close();
+            driver.Quit();
+        }
+
+        void RunFreer(string url)
+        {
+            ChromeOptions options = new ChromeOptions();
+            options.AddArguments("--start-maximized");
+            //options.AddArgument("--no-sandbox");
+            options.AddArgument("--disable-popup-blocking");
+            options.AddArgument("--ignore-certificate-errors");
+            options.AddArguments($"--user-data-dir=C:/Users/{Environment.UserName}/AppData/Local/Google/Chrome/User Data/");
+            options.AddArgument("--profile-directory=Default");
+            var service = ChromeDriverService.CreateDefaultService();
+            service.HideCommandPromptWindow = true;
+            service.SuppressInitialDiagnosticInformation = true;
+            ChromeDriver driver = new ChromeDriver(service, options);
+            //Go to Zefoy
+            driver.Navigate().GoToUrl("https://homedecoratione.com/");
+
+            //Wait use button
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            var btn = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/main/div[1]/div/div[2]/div/div[1]/div[3]/div/div/button")));
+            btn.Click();
+            //Input searchbox
+            var searchBox = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/main/div[1]/div/div[2]/form/div/input")));
+            searchBox.SendKeys(url + OpenQA.Selenium.Keys.Enter);
+            //Click buff button
+            var btnBuff = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/main/div[1]/div/div[2]/div/div/div[1]/button[4]")));
+            btnBuff.Click();
 
             Sleep(1);
             driver.Close();
@@ -92,14 +124,24 @@ namespace BuffViewVinfast
 
         private void btnStartView_Click(object sender, EventArgs e)
         {
-            
-            for (int i = 0; i < 20; i++)
+            if(comboBox1.SelectedIndex.ToString() == "Zefoy")
             {
-                string rand_url = GetRandomLink();
-                CreateChrome(rand_url);
-                Sleep(110);
+                for (int i = 0; i < 20; i++)
+                {
+                    string rand_url = GetRandomLink();
+                    RunZefoy(rand_url);
+                    Sleep(110);
+                }
             }
-            
+            else
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    string rand_url = GetRandomLink();
+                    RunFreer(rand_url);
+                    Sleep(300);
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -121,6 +163,18 @@ namespace BuffViewVinfast
             foreach (var process in Process.GetProcessesByName("chrome"))
             {
                 process.Kill();
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem.ToString() == "Homedecoration")
+            {
+                radShare.Enabled = false;
+            }
+            else
+            {
+                radShare.Enabled = true;
             }
         }
     }
