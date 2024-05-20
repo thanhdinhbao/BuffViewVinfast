@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuffViewVinfast", "BuffViewVinfast\BuffViewVinfast.csproj", "{158D7043-88BC-49E4-85D0-0F9E2C3E1B2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{158D7043-88BC-49E4-85D0-0F9E2C3E1B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{158D7043-88BC-49E4-85D0-0F9E2C3E1B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{158D7043-88BC-49E4-85D0-0F9E2C3E1B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{158D7043-88BC-49E4-85D0-0F9E2C3E1B2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7372DF91-2EA2-42F4-8849-38F87825786D}
+	EndGlobalSection
+EndGlobal
